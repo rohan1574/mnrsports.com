@@ -1,484 +1,530 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MNR Sports</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Privacy Policy – NJR10 Live</title>
+    <meta name="description" content="Privacy Policy for NJR10 Live mobile application. Learn how we collect, use, and protect your information.">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --gold: #F5C518;
+            --gold-light: #FFD700;
+            --gold-dark: #C9A800;
+            --gold-glow: rgba(245, 197, 24, 0.15);
+            --bg-primary: #0D0F14;
+            --bg-secondary: #13161E;
+            --bg-card: #1A1D27;
+            --border: rgba(245, 197, 24, 0.12);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --text-primary: #E8EAF0;
+            --text-secondary: #9EA3B2;
+            --text-muted: #6B7080;
+            --accent-green: #22C55E;
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%; left: -20%;
+            width: 60%; height: 80%;
+            background: radial-gradient(ellipse, rgba(245,197,24,0.04) 0%, transparent 70%);
+            pointer-events: none; z-index: 0;
+        }
+
+        /* Header */
+        header {
+            position: relative; z-index: 10;
+            background: linear-gradient(180deg, rgba(13,15,20,0.98) 0%, rgba(13,15,20,0.9) 100%);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+        }
+
+        .header-inner {
+            max-width: 860px; margin: 0 auto;
+            padding: 40px 24px 36px;
+            display: flex; flex-direction: column;
+            align-items: center; text-align: center;
+        }
+
+        .app-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gold-glow);
+            border: 1px solid rgba(245,197,24,0.25);
+            border-radius: 100px; padding: 6px 16px;
+            margin-bottom: 22px;
+            animation: fadeInDown 0.6s ease;
+        }
+
+        .app-badge-dot {
+            width: 7px; height: 7px;
+            background: var(--gold); border-radius: 50%;
+            box-shadow: 0 0 8px var(--gold);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity:1; transform:scale(1); }
+            50% { opacity:0.6; transform:scale(0.85); }
+        }
+
+        .app-badge-text {
+            font-size: 12px; font-weight: 600;
+            color: var(--gold); letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .header-title {
+            font-size: clamp(26px, 5vw, 40px);
+            font-weight: 800; line-height: 1.15;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--gold-light) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 0.7s ease;
+        }
+
+        .header-subtitle {
+            font-size: 15px; color: var(--text-secondary);
+            margin-bottom: 20px; animation: fadeInDown 0.8s ease;
+        }
+
+        .effective-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(34,197,94,0.10);
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 8px; padding: 6px 14px;
+            font-size: 13px; color: var(--accent-green);
+            font-weight: 500; animation: fadeInDown 0.9s ease;
+        }
+
+        /* Main */
+        main {
+            position: relative; z-index: 5;
+            max-width: 860px; margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Intro */
+        .intro-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 28px 32px; margin-bottom: 40px;
+            font-size: 15px; color: var(--text-secondary);
+            line-height: 1.8; animation: fadeIn 0.8s ease;
+        }
+
+        .intro-card strong { color: var(--gold); }
+
+        /* Section */
+        .section {
+            margin-bottom: 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px; overflow: hidden;
+            animation: fadeInUp 0.6s ease both;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            border-color: var(--border);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(245,197,24,0.05);
+        }
+
+        .section-header {
+            display: flex; align-items: center; gap: 14px;
+            padding: 20px 28px;
+            border-bottom: 1px solid var(--border-subtle);
+            background: linear-gradient(90deg, rgba(245,197,24,0.05) 0%, transparent 80%);
+        }
+
+        .section-number {
+            display: flex; align-items: center; justify-content: center;
+            width: 32px; height: 32px; min-width: 32px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border-radius: 8px; font-size: 13px; font-weight: 700;
+            color: #0D0F14; box-shadow: 0 0 12px rgba(245,197,24,0.3);
+        }
+
+        .section-title {
+            font-size: 18px; font-weight: 700;
+            color: var(--gold); letter-spacing: -0.01em;
+            text-shadow: 0 0 20px rgba(245,197,24,0.25);
+        }
+
+        .section-body { padding: 22px 28px; }
+
+        .section-body p {
+            font-size: 14.5px; color: var(--text-secondary);
+            margin-bottom: 12px; line-height: 1.8;
+        }
+
+        .section-body p:last-child { margin-bottom: 0; }
+
+        .sub-heading {
+            font-size: 14px; font-weight: 600;
+            color: var(--text-primary); margin: 16px 0 10px;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .sub-heading::before {
+            content: '';
+            display: inline-block; width: 3px; height: 14px;
+            background: var(--gold); border-radius: 2px; flex-shrink: 0;
+        }
+
+        ul.policy-list { list-style: none; padding: 0; margin: 8px 0 12px; }
+
+        ul.policy-list li {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 14px; color: var(--text-secondary);
+            padding: 7px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        ul.policy-list li:last-child { border-bottom: none; }
+
+        ul.policy-list li::before {
+            content: '◆'; color: var(--gold);
+            font-size: 7px; margin-top: 7px;
+            flex-shrink: 0; opacity: 0.8;
+        }
+
+        a.policy-link {
+            color: var(--gold); text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(245,197,24,0.3);
+            transition: border-color 0.2s, color 0.2s;
+            word-break: break-all;
+        }
+
+        a.policy-link:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+
+        /* Service grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+            gap: 10px; margin-top: 12px;
+        }
+
+        .service-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px; padding: 14px 16px;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+
+        .service-card:hover { border-color: rgba(245,197,24,0.25); transform: translateY(-2px); }
+        .service-card-name { font-size: 13px; font-weight: 600; color: var(--gold); margin-bottom: 3px; }
+        .service-card-desc { font-size: 12px; color: var(--text-muted); }
+
+        /* Contact */
+        .contact-box {
+            background: linear-gradient(135deg, rgba(245,197,24,0.08) 0%, rgba(245,197,24,0.03) 100%);
+            border: 1px solid rgba(245,197,24,0.2);
+            border-radius: 12px; padding: 18px 22px; margin-top: 8px;
+        }
+
+        .contact-row {
+            display: flex; align-items: center; gap: 10px;
+            padding: 9px 0; font-size: 14px; color: var(--text-secondary);
+            border-bottom: 1px solid rgba(245,197,24,0.08);
+        }
+
+        .contact-row:last-child { border-bottom: none; }
+        .contact-label { font-weight: 600; color: var(--gold); min-width: 85px; font-size: 13px; }
+
+        /* Footer */
+        footer {
+            position: relative; z-index: 5;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center; padding: 32px 24px;
+        }
+
+        .footer-logo {
+            font-size: 20px; font-weight: 800;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 8px;
+        }
+
+        .footer-text { font-size: 13px; color: var(--text-muted); }
+        .footer-link { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-link:hover { color: var(--gold); }
+
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes fadeInDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: rgba(245,197,24,0.25); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(245,197,24,0.45); }
+
+        @media (max-width: 600px) {
+            .header-inner { padding: 28px 16px 24px; }
+            main { padding: 28px 14px 60px; }
+            .section-header { padding: 16px 18px; }
+            .section-body { padding: 16px 18px; }
+            .section-title { font-size: 15px; }
+            .intro-card { padding: 18px; }
+            .service-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-2xl font-bold text-blue-600">MNR Sports</a>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-slate-600 hover:text-blue-600 font-medium">Home</a>
-                    <a href="#about" class="text-slate-600 hover:text-blue-600 font-medium">About</a>
-                    <a href="#products" class="text-slate-600 hover:text-blue-600 font-medium">Products</a>
-                    <a href="#team" class="text-slate-600 hover:text-blue-600 font-medium">Team</a>
-                    <a href="#technology" class="text-slate-600 hover:text-blue-600 font-medium">Technology</a>
-                    <a href="#blog" class="text-slate-600 hover:text-blue-600 font-medium">Blog</a>
-                    <a href="#careers" class="text-slate-600 hover:text-blue-600 font-medium">Careers</a>
-                    <a href="#contact" class="text-slate-600 hover:text-blue-600 font-medium">Contact</a>
-                    <a href="privacy-policy-neymar10.html" class="text-slate-600 hover:text-blue-600 font-medium">Privacy Policy</a>
-                </div>
-            </div>
+<header>
+    <div class="header-inner">
+        <div class="app-badge">
+            <span class="app-badge-dot"></span>
+            <span class="app-badge-text">Mobile App Policy</span>
         </div>
-    </nav>
+        <h1 class="header-title">Privacy Policy<br>NJR10 Live</h1>
+        <p class="header-subtitle">How we collect, use, and protect your information</p>
+        <div class="effective-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Effective Date: September 13, 2026
+        </div>
+    </div>
+</header>
 
-    <!-- Home Section -->
-    <section id="home" class="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
-                Welcome to <span class="text-blue-600">MNR Sports</span>
-            </h1>
-            <p class="mt-4 text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
-                Founded by a passionate team of builders.
+<main>
+    <div class="intro-card">
+        Welcome to <strong>NJR10 Live</strong>. This Privacy Policy explains how we collect, use, and protect information when you use our mobile application.<br><br>
+        By using NJR10 Live, you agree to the practices described in this Privacy Policy.
+    </div>
+
+    <!-- 1 -->
+    <div class="section" id="section-1">
+        <div class="section-header">
+            <div class="section-number">1</div>
+            <h2 class="section-title">Information We Collect</h2>
+        </div>
+        <div class="section-body">
+            <p>NJR10 Live is a football live score application that provides football match scores, fixtures, team information, league standings, and related football content.</p>
+            <p class="sub-heading">Personal Information</p>
+            <p>NJR10 Live does not require users to create an account or log in to use the application. We do not directly collect personal information such as:</p>
+            <ul class="policy-list">
+                <li>Name</li>
+                <li>Email address</li>
+                <li>Phone number</li>
+                <li>Password</li>
+                <li>Home address</li>
+            </ul>
+            <p>We do not require users to provide personal information to access the main features of the application.</p>
+            <p class="sub-heading">Automatically Collected Information</p>
+            <p>Our third-party service providers, including Google AdMob, may automatically collect certain information when you use the application. This information may include:</p>
+            <ul class="policy-list">
+                <li>Advertising ID or other device identifiers</li>
+                <li>Device information</li>
+                <li>IP address</li>
+                <li>Approximate location inferred from IP address</li>
+                <li>Advertising and app interaction information</li>
+                <li>Diagnostics and performance information, where applicable</li>
+            </ul>
+            <p>The information collected depends on the services and SDKs integrated into the application and their configuration.</p>
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="section" id="section-2">
+        <div class="section-header">
+            <div class="section-number">2</div>
+            <h2 class="section-title">Advertising – Google AdMob</h2>
+        </div>
+        <div class="section-body">
+            <p>NJR10 Live uses <strong style="color:var(--gold)">Google AdMob</strong> to display advertisements. Google AdMob may collect and process information to provide, measure, and improve advertising services. Depending on your device settings, consent, and applicable requirements, advertisements may be personalized or non-personalized.</p>
+            <p>Google may use advertising identifiers and other information for advertising and measurement purposes.</p>
+            <p>For more information about how Google handles data, please visit:<br>
+                <a class="policy-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
             </p>
-            <p class="mt-4 text-lg text-slate-500 max-w-2xl mx-auto">
-                We are dedicated to creating innovative sports applications and solutions that empower athletes and sports enthusiasts worldwide.
+            <p>You can learn more about Google advertising practices here:<br>
+                <a class="policy-link" href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a>
             </p>
-            <div class="mt-10">
-                <a href="#products" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl">
-                    Explore Our Apps
-                </a>
-            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">About Us</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-            </div>
-            <div class="max-w-3xl mx-auto text-center text-lg text-slate-600 leading-relaxed">
-                <p>
-                    MNR Sports is a forward-thinking technology company focused on the sports industry. We believe in the power of technology to transform how people engage with sports, whether it's tracking performance, managing teams, or staying connected with the sports community.
-                </p>
-            </div>
+    <!-- 3 -->
+    <div class="section" id="section-3">
+        <div class="section-header">
+            <div class="section-number">3</div>
+            <h2 class="section-title">Football Data and API Services</h2>
         </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">Our Products</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                <p class="mt-4 text-slate-600">Discover our suite of sports applications designed for excellence.</p>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-
-                <!-- Product Card 1: MNR Score Tracker -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all duration-300 group">
-                    <div class="h-48 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 group-hover:scale-105 transition duration-500"></div>
-                        <span class="relative text-white font-bold text-2xl z-10">MNR Score Tracker</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">MNR Score Tracker</h3>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
-                            A comprehensive application for tracking live scores, managing tournaments, and analyzing player statistics in real-time.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center text-sm">
-                            Learn more
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- ⚽ Neymar10 Featured Product -->
-            <div class="relative rounded-3xl overflow-hidden" style="background: linear-gradient(135deg, #0D0F14 0%, #13161E 50%, #1A1D27 100%); border: 1px solid rgba(245,197,24,0.15);">
-
-                <!-- Glow effects -->
-                <div style="position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(245,197,24,0.12) 0%,transparent 70%);pointer-events:none;"></div>
-                <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(59,130,246,0.08) 0%,transparent 70%);pointer-events:none;"></div>
-
-                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
-
-                    <!-- Left: Info -->
-                    <div class="p-10 lg:p-14 flex flex-col justify-center">
-                        <!-- Badge -->
-                        <div class="flex items-center gap-3 mb-6">
-                            <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(245,197,24,0.12);border:1px solid rgba(245,197,24,0.3);border-radius:100px;padding:5px 14px;">
-                                <span style="width:6px;height:6px;background:#F5C518;border-radius:50%;box-shadow:0 0 7px #F5C518;display:inline-block;animation:neymar-pulse 2s infinite;"></span>
-                                <span style="font-size:11px;font-weight:700;color:#F5C518;letter-spacing:0.1em;text-transform:uppercase;">Live Now</span>
-                            </div>
-                            <span style="font-size:12px;color:#6B7080;font-weight:500;">Android App</span>
-                        </div>
-
-                        <!-- Title -->
-                        <h3 style="font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.1;margin-bottom:12px;background:linear-gradient(135deg,#FFFFFF 0%,#FFD700 60%,#F5C518 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
-                            Neymar10<br>
-                            <span style="font-size:0.55em;font-weight:600;background:linear-gradient(90deg,#9EA3B2,#6B7080);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Football Live Score</span>
-                        </h3>
-
-                        <!-- Description -->
-                        <p style="font-size:15px;color:#9EA3B2;line-height:1.75;margin-bottom:28px;">
-                            Your ultimate companion for real-time football action. Get live scores, fixtures, league standings, team stats, and match updates — all in one beautifully designed app. Never miss a moment of the beautiful game.
-                        </p>
-
-                        <!-- Feature list -->
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px;">
-                            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#C8CADB;">
-                                <span style="color:#F5C518;font-size:10px;">⚡</span> Live Match Scores
-                            </div>
-                            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#C8CADB;">
-                                <span style="color:#F5C518;font-size:10px;">📅</span> Fixtures &amp; Results
-                            </div>
-                            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#C8CADB;">
-                                <span style="color:#F5C518;font-size:10px;">🏆</span> League Standings
-                            </div>
-                            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#C8CADB;">
-                                <span style="color:#F5C518;font-size:10px;">👕</span> Team Information
-                            </div>
-                            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#C8CADB;">
-                                <span style="color:#F5C518;font-size:10px;">📊</span> Match Statistics
-                            </div>
-                            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#C8CADB;">
-                                <span style="color:#F5C518;font-size:10px;">🌍</span> All Major Leagues
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons -->
-                        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
-                            <a href="#" target="_blank" id="neymar10-play-store-btn"
-                               style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#C9A800,#F5C518);color:#0D0F14;font-weight:700;font-size:14px;padding:13px 24px;border-radius:12px;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(245,197,24,0.35);"
-                               onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(245,197,24,0.5)'"
-                               onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(245,197,24,0.35)'">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 1-1-.26 2.08 2.08 0 0 1-1-1.84V2.34a2.08 2.08 0 0 1 1-1.84 2 2 0 0 1 2.06.06l17.15 9.66a2 2 0 0 1 0 3.56L4.24 23.44a2 2 0 0 1-1.06.32z"/></svg>
-                                Download on Google Play
-                            </a>
-                            <a href="privacy-policy-neymar10.html" id="neymar10-privacy-btn"
-                               style="display:inline-flex;align-items:center;gap:8px;color:#9EA3B2;font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;transition:all 0.2s;"
-                               onmouseover="this.style.color='#F5C518';this.style.borderColor='rgba(245,197,24,0.3)'"
-                               onmouseout="this.style.color='#9EA3B2';this.style.borderColor='rgba(255,255,255,0.08)'">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                Privacy Policy
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right: Visual -->
-                    <div style="display:flex;align-items:center;justify-content:center;padding:40px;position:relative;min-height:380px;">
-
-                        <!-- Phone mockup -->
-                        <div style="position:relative;z-index:2;">
-                            <!-- Outer phone -->
-                            <div style="width:220px;height:440px;background:linear-gradient(145deg,#1F2333,#13161E);border-radius:36px;border:2px solid rgba(245,197,24,0.2);box-shadow:0 30px 80px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.04),inset 0 1px 0 rgba(255,255,255,0.08);position:relative;overflow:hidden;">
-
-                                <!-- Notch -->
-                                <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:70px;height:6px;background:#0D0F14;border-radius:10px;z-index:5;"></div>
-
-                                <!-- Screen content -->
-                                <div style="position:absolute;inset:0;padding:28px 14px 14px;display:flex;flex-direction:column;gap:8px;">
-
-                                    <!-- App bar -->
-                                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
-                                        <span style="font-size:13px;font-weight:800;background:linear-gradient(90deg,#FFD700,#F5C518);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Neymar10</span>
-                                        <div style="display:flex;gap:5px;">
-                                            <div style="width:6px;height:6px;background:#22C55E;border-radius:50%;box-shadow:0 0 5px #22C55E;"></div>
-                                            <span style="font-size:9px;color:#22C55E;font-weight:600;">LIVE</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Match card 1 -->
-                                    <div style="background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.18);border-radius:12px;padding:10px 10px;">
-                                        <div style="font-size:8px;color:#F5C518;font-weight:600;letter-spacing:0.06em;margin-bottom:6px;">🏆 PREMIER LEAGUE</div>
-                                        <div style="display:flex;align-items:center;justify-content:space-between;">
-                                            <div style="text-align:center;flex:1;">
-                                                <div style="font-size:14px;margin-bottom:2px;">🔴</div>
-                                                <div style="font-size:9px;color:#E8EAF0;font-weight:600;">MAN UTD</div>
-                                            </div>
-                                            <div style="text-align:center;padding:4px 10px;background:rgba(245,197,24,0.15);border-radius:8px;border:1px solid rgba(245,197,24,0.25);">
-                                                <div style="font-size:16px;font-weight:800;color:#FFD700;">2 - 1</div>
-                                                <div style="font-size:7px;color:#22C55E;font-weight:700;margin-top:1px;">● 67'</div>
-                                            </div>
-                                            <div style="text-align:center;flex:1;">
-                                                <div style="font-size:14px;margin-bottom:2px;">🔵</div>
-                                                <div style="font-size:9px;color:#E8EAF0;font-weight:600;">CHELSEA</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Match card 2 -->
-                                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:10px 10px;">
-                                        <div style="font-size:8px;color:#9EA3B2;font-weight:600;letter-spacing:0.06em;margin-bottom:6px;">⚽ LA LIGA</div>
-                                        <div style="display:flex;align-items:center;justify-content:space-between;">
-                                            <div style="text-align:center;flex:1;">
-                                                <div style="font-size:14px;margin-bottom:2px;">⚪</div>
-                                                <div style="font-size:9px;color:#E8EAF0;font-weight:600;">REAL MAD</div>
-                                            </div>
-                                            <div style="text-align:center;padding:4px 10px;background:rgba(255,255,255,0.06);border-radius:8px;">
-                                                <div style="font-size:16px;font-weight:800;color:#E8EAF0;">1 - 0</div>
-                                                <div style="font-size:7px;color:#22C55E;font-weight:700;margin-top:1px;">● 45'</div>
-                                            </div>
-                                            <div style="text-align:center;flex:1;">
-                                                <div style="font-size:14px;margin-bottom:2px;">🔵</div>
-                                                <div style="font-size:9px;color:#E8EAF0;font-weight:600;">BARCELONA</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Match card 3 -->
-                                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:10px 10px;">
-                                        <div style="font-size:8px;color:#9EA3B2;font-weight:600;letter-spacing:0.06em;margin-bottom:6px;">🏟️ CHAMPIONS LEAGUE</div>
-                                        <div style="display:flex;align-items:center;justify-content:space-between;">
-                                            <div style="text-align:center;flex:1;">
-                                                <div style="font-size:14px;margin-bottom:2px;">🔵</div>
-                                                <div style="font-size:9px;color:#E8EAF0;font-weight:600;">PSG</div>
-                                            </div>
-                                            <div style="text-align:center;padding:4px 10px;background:rgba(255,255,255,0.06);border-radius:8px;">
-                                                <div style="font-size:16px;font-weight:800;color:#E8EAF0;">0 - 0</div>
-                                                <div style="font-size:7px;color:#F5C518;font-weight:700;margin-top:1px;">HT</div>
-                                            </div>
-                                            <div style="text-align:center;flex:1;">
-                                                <div style="font-size:14px;margin-bottom:2px;">🔴</div>
-                                                <div style="font-size:9px;color:#E8EAF0;font-weight:600;">BAYERN</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Standings mini -->
-                                    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:8px 10px;">
-                                        <div style="font-size:8px;color:#9EA3B2;font-weight:600;margin-bottom:5px;">📊 STANDINGS</div>
-                                        <div style="display:flex;justify-content:space-between;font-size:8px;color:#6B7080;margin-bottom:3px;">
-                                            <span>#</span><span style="flex:1;margin-left:6px;">Team</span><span>Pts</span>
-                                        </div>
-                                        <div style="display:flex;justify-content:space-between;font-size:9px;color:#E8EAF0;padding:2px 0;">
-                                            <span style="color:#F5C518;font-weight:700;">1</span><span style="flex:1;margin-left:6px;font-weight:600;">Man City</span><span style="font-weight:700;color:#F5C518;">72</span>
-                                        </div>
-                                        <div style="display:flex;justify-content:space-between;font-size:9px;color:#9EA3B2;padding:2px 0;">
-                                            <span>2</span><span style="flex:1;margin-left:6px;">Liverpool</span><span>68</span>
-                                        </div>
-                                        <div style="display:flex;justify-content:space-between;font-size:9px;color:#9EA3B2;padding:2px 0;">
-                                            <span>3</span><span style="flex:1;margin-left:6px;">Arsenal</span><span>65</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- Side glow -->
-                            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:280px;height:280px;background:radial-gradient(circle,rgba(245,197,24,0.12) 0%,transparent 70%);z-index:1;pointer-events:none;"></div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Bottom bar -->
-                <div style="border-top:1px solid rgba(255,255,255,0.05);padding:16px 40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:rgba(0,0,0,0.2);">
-                    <div style="display:flex;gap:24px;flex-wrap:wrap;">
-                        <div style="text-align:center;">
-                            <div style="font-size:20px;font-weight:800;color:#F5C518;">100+</div>
-                            <div style="font-size:11px;color:#6B7080;margin-top:1px;">Leagues</div>
-                        </div>
-                        <div style="text-align:center;">
-                            <div style="font-size:20px;font-weight:800;color:#F5C518;">Live</div>
-                            <div style="font-size:11px;color:#6B7080;margin-top:1px;">Scores</div>
-                        </div>
-                        <div style="text-align:center;">
-                            <div style="font-size:20px;font-weight:800;color:#F5C518;">Free</div>
-                            <div style="font-size:11px;color:#6B7080;margin-top:1px;">Download</div>
-                        </div>
-                    </div>
-                    <div style="font-size:12px;color:#6B7080;">
-                        ⚽ Available on <span style="color:#9EA3B2;font-weight:600;">Google Play Store</span>
-                    </div>
-                </div>
-
-            </div>
+        <div class="section-body">
+            <p>NJR10 Live uses football data services, including <strong style="color:var(--gold)">API-Football</strong> and/or <strong style="color:var(--gold)">RapidAPI</strong>, to provide football scores, fixtures, team information, and other football-related data.</p>
+            <p>These services may process technical information necessary to provide API access and deliver data to the application. NJR10 Live does not require users to submit personal information to view football scores.</p>
+            <p>For more information, please visit:<br>
+                API-Football: <a class="policy-link" href="https://www.api-football.com/privacy" target="_blank" rel="noopener">https://www.api-football.com/privacy</a><br>
+                RapidAPI: <a class="policy-link" href="https://rapidapi.com/privacy" target="_blank" rel="noopener">https://rapidapi.com/privacy</a>
+            </p>
         </div>
-    </section>
+    </div>
 
-    <style>
-        @keyframes neymar-pulse {
-            0%,100% { opacity:1; transform:scale(1); }
-            50% { opacity:0.5; transform:scale(0.8); }
-        }
-    </style>
+    <!-- 4 -->
+    <div class="section" id="section-4">
+        <div class="section-header">
+            <div class="section-number">4</div>
+            <h2 class="section-title">How We Use Information</h2>
+        </div>
+        <div class="section-body">
+            <p>Information processed by NJR10 Live and its third-party service providers may be used to:</p>
+            <ul class="policy-list">
+                <li>Provide live football scores and match information</li>
+                <li>Display advertisements</li>
+                <li>Measure advertising performance</li>
+                <li>Improve application performance and reliability</li>
+                <li>Detect and prevent fraud, abuse, or technical issues</li>
+                <li>Comply with applicable legal requirements</li>
+            </ul>
+        </div>
+    </div>
 
-    <!-- Team Section -->
-    <section id="team" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">Meet the Team</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">The passionate builders behind MNR Sports.</p>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-12">
-                <!-- Rony -->
-                <div class="text-center w-64">
-                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg group">
-                        <img src="img/rony.jpg" alt="Rony" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:blur-[1px]" onerror="this.src='https://ui-avatars.com/api/?name=Rony&background=0D8ABC&color=fff&size=200'">
-                        <!-- Hover Overlay -->
-                        <div class="absolute inset-0 bg-slate-900/60 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <!-- Facebook -->
-                            <a href="#" target="_blank" class="w-9 h-9 rounded-full bg-white hover:bg-blue-600 text-slate-900 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110" title="Facebook">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                            </a>
-                            <!-- TikTok -->
-                            <a href="#" target="_blank" class="w-9 h-9 rounded-full bg-white hover:bg-black text-slate-900 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110" title="TikTok">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.94-1.74-.22-.2-.42-.42-.61-.65v7.17c.02 1.36-.4 2.79-1.35 3.75-1.2 1.25-3.1 1.76-4.8 1.34-1.93-.43-3.54-2.14-3.79-4.12-.43-2.52 1.05-5.2 3.52-5.79.57-.14 1.17-.16 1.75-.1v3.71c-.74-.08-1.54.1-2.12.58-.7.54-.93 1.51-.62 2.33.35.88 1.35 1.45 2.29 1.28 1.11-.13 1.93-1.19 1.93-2.31V.02z"/></svg>
-                            </a>
-                            <!-- YouTube -->
-                            <a href="#" target="_blank" class="w-9 h-9 rounded-full bg-white hover:bg-red-600 text-slate-900 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110" title="YouTube">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900">Md.Rony Hossen</h3>
-                    <p class="text-indigo-600 font-semibold mt-1">Co-Founder & CTO</p>
-                    <p class="text-slate-500 mt-3 text-sm">Architecting robust and scalable sports applications with cutting-edge technologies.</p>
+    <!-- 5 -->
+    <div class="section" id="section-5">
+        <div class="section-header">
+            <div class="section-number">5</div>
+            <h2 class="section-title">Third-Party Services</h2>
+        </div>
+        <div class="section-body">
+            <p>NJR10 Live may use the following third-party services:</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-card-name">Google AdMob</div>
+                    <div class="service-card-desc">Advertising services</div>
                 </div>
+                <div class="service-card">
+                    <div class="service-card-name">API-Football</div>
+                    <div class="service-card-desc">Football data services</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-name">RapidAPI</div>
+                    <div class="service-card-desc">API access &amp; related services</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-name">Google Play Services</div>
+                    <div class="service-card-desc">App distribution &amp; functionality</div>
+                </div>
+            </div>
+            <p style="margin-top:16px;">These third-party providers may process information according to their own privacy policies. We encourage users to review the privacy policies of these third-party services.</p>
+        </div>
+    </div>
 
-                <!-- Naimul -->
-                <div class="text-center w-64">
-                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg group">
-                        <img src="img/namul.jpg" alt="Naimul" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:blur-[1px]" onerror="this.src='https://ui-avatars.com/api/?name=Naimul&background=0D8ABC&color=fff&size=200'">
-                        <!-- Hover Overlay -->
-                        <div class="absolute inset-0 bg-slate-900/60 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <!-- Facebook -->
-                            <a href="#" target="_blank" class="w-9 h-9 rounded-full bg-white hover:bg-blue-600 text-slate-900 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110" title="Facebook">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                            </a>
-                            <!-- TikTok -->
-                            <a href="#" target="_blank" class="w-9 h-9 rounded-full bg-white hover:bg-black text-slate-900 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110" title="TikTok">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.94-1.74-.22-.2-.42-.42-.61-.65v7.17c.02 1.36-.4 2.79-1.35 3.75-1.2 1.25-3.1 1.76-4.8 1.34-1.93-.43-3.54-2.14-3.79-4.12-.43-2.52 1.05-5.2 3.52-5.79.57-.14 1.17-.16 1.75-.1v3.71c-.74-.08-1.54.1-2.12.58-.7.54-.93 1.51-.62 2.33.35.88 1.35 1.45 2.29 1.28 1.11-.13 1.93-1.19 1.93-2.31V.02z"/></svg>
-                            </a>
-                            <!-- YouTube -->
-                            <a href="#" target="_blank" class="w-9 h-9 rounded-full bg-white hover:bg-red-600 text-slate-900 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110" title="YouTube">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900">Md.Naim Sheikh</h3>
-                    <p class="text-violet-600 font-semibold mt-1">Co-Founder & CEO</p>
-                    <p class="text-slate-500 mt-3 text-sm">Driving growth, brand awareness, and connecting our products with sports lovers everywhere.</p>
+    <!-- 6 -->
+    <div class="section" id="section-6">
+        <div class="section-header">
+            <div class="section-number">6</div>
+            <h2 class="section-title">Data Security</h2>
+        </div>
+        <div class="section-body">
+            <p>We take reasonable steps to protect information processed through our application and services.</p>
+            <p>However, no method of electronic transmission or storage is completely secure. We cannot guarantee absolute security of information.</p>
+        </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="section" id="section-7">
+        <div class="section-header">
+            <div class="section-number">7</div>
+            <h2 class="section-title">Children's Privacy</h2>
+        </div>
+        <div class="section-body">
+            <p>NJR10 Live is a general-audience football application. We do not knowingly collect personal information directly from children.</p>
+            <p>If you believe that a child has provided personal information to us, please contact us so that we can review and take appropriate action.</p>
+        </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="section" id="section-8">
+        <div class="section-header">
+            <div class="section-number">8</div>
+            <h2 class="section-title">Data Retention</h2>
+        </div>
+        <div class="section-body">
+            <p>NJR10 Live does not maintain user accounts or a personal user database.</p>
+            <p>Third-party service providers may retain information according to their own policies and legal obligations. For details about retention by Google AdMob and other services, please review their respective privacy policies.</p>
+        </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="section" id="section-9">
+        <div class="section-header">
+            <div class="section-number">9</div>
+            <h2 class="section-title">Your Privacy Choices</h2>
+        </div>
+        <div class="section-body">
+            <p>You may be able to manage advertising preferences through your device settings or available consent controls.</p>
+            <p>You can also review or manage your advertising settings through Google services, depending on your device and region.</p>
+        </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="section" id="section-10">
+        <div class="section-header">
+            <div class="section-number">10</div>
+            <h2 class="section-title">Changes to This Privacy Policy</h2>
+        </div>
+        <div class="section-body">
+            <p>We may update this Privacy Policy from time to time. Any changes will be published on this page with an updated effective date.</p>
+            <p>We encourage you to review this Privacy Policy periodically.</p>
+        </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="section" id="section-11">
+        <div class="section-header">
+            <div class="section-number">11</div>
+            <h2 class="section-title">Contact Us</h2>
+        </div>
+        <div class="section-body">
+            <p>If you have any questions or concerns about this Privacy Policy or NJR10 Live, please contact us:</p>
+            <div class="contact-box">
+                <div class="contact-row">
+                    <span class="contact-label">App Name</span>
+                    <span>NJR10 Live</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">Developer</span>
+                    <span>Rony Hossen</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">Email</span>
+                    <span style="color:var(--gold)">mrrony1574@gmail.com</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</main>
 
-    <!-- Technology Section -->
-    <section id="technology" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold">Our Technology Stack</h2>
-                <div class="w-20 h-1 bg-blue-500 mx-auto mt-4 rounded"></div>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center opacity-80">
-                <div class="p-4 bg-slate-800 rounded-xl">
-                    <p class="font-bold text-xl">React Native</p>
-                    <p class="text-sm text-slate-400 mt-2">Mobile Apps</p>
-                </div>
-                <div class="p-4 bg-slate-800 rounded-xl">
-                    <p class="font-bold text-xl">Next.js</p>
-                    <p class="text-sm text-slate-400 mt-2">Web Platform</p>
-                </div>
-                <div class="p-4 bg-slate-800 rounded-xl">
-                    <p class="font-bold text-xl">Node.js</p>
-                    <p class="text-sm text-slate-400 mt-2">Backend API</p>
-                </div>
-                <div class="p-4 bg-slate-800 rounded-xl">
-                    <p class="font-bold text-xl">Tailwind CSS</p>
-                    <p class="text-sm text-slate-400 mt-2">Styling</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">Latest from the Blog</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post Placeholder -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden p-6 border border-slate-100">
-                    <p class="text-sm text-blue-600 font-semibold mb-2">Development</p>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Building the Future of Sports Tech</h3>
-                    <p class="text-slate-600 text-sm mb-4">How our passionate team is leveraging modern technologies to build better experiences...</p>
-                    <a href="#" class="text-sm font-semibold text-slate-900 hover:text-blue-600">Read Article &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Careers Section -->
-    <section id="careers" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6">Join Our Team</h2>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">We are always looking for talented builders to join our mission. Check out our open positions.</p>
-            <div class="inline-block bg-slate-50 border border-slate-200 rounded-xl p-8 max-w-lg w-full">
-                <p class="text-slate-500 italic">No open positions right now, but feel free to drop your resume!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">Get In Touch</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-            </div>
-            <form class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Name</label>
-                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition" placeholder="John Doe">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                        <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition" placeholder="john@example.com">
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                    <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition" placeholder="How can we help you?"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition">
-                    Send Message
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-2xl font-bold text-white mb-4">MNR Sports</h3>
-            <p class="mb-6">Founded by a passionate team of builders.</p>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="hover:text-white transition">Twitter</a>
-                <a href="#" class="hover:text-white transition">LinkedIn</a>
-                <a href="#" class="hover:text-white transition">GitHub</a>
-                <a href="privacy-policy-neymar10.html" class="hover:text-white transition">Privacy Policy</a>
-            </div>
-            <p>&copy; 2026 MNR Sports. All rights reserved.</p>
-        </div>
-    </footer>
+<footer>
+    <div class="footer-logo">⚽ NJR10 Live</div>
+    <p class="footer-text">
+        &copy; 2026 NJR10 Live &middot;
+        <a href="/" class="footer-link">mnrsports.com</a>
+    </p>
+    <p class="footer-text" style="margin-top:6px;">Developer: Rony Hossen</p>
+</footer>
 
 </body>
 </html>
